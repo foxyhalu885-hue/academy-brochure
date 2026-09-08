@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>نسخه دیجیتال بروشور آکادمی تخصصی استعداد، مهارت و کسب‌وکار</title>
+  
+  <meta name="description" content="نسخه تعاملی و هوشمند بروشور آکادمی تخصصی استعداد، مهارت و کسب‌وکار - همکار پژوهشگاه استاندارد ملی و دانشگاه بین‌المللی امام خمینی">
+  <meta property="og:title" content="آکادمی تخصصی استعداد، مهارت و کسب‌وکار">
+  <meta property="og:description" content="طراحی مسیرهای اختصاصی موفقیت اقتصادی برای نوجوانان (۱۵ تا ۱۸ سال) و بزرگسالان (۱۸+ سال)">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#040813">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'Vazirmatn';
+      src: url('fonts/Vazirmatn-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Vazirmatn';
+      src: url('fonts/Vazirmatn-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    :root {
+      --bg-dark: #040813;
+      --bg-surface: #081022;
+      --bg-card: rgba(13, 23, 44, 0.88);
+      --gold-primary: #D4AF37;
+      --gold-light: #FFDF78;
+      --gold-dark: #9A7422;
+      --gold-glow: rgba(212, 175, 55, 0.25);
+      --gold-gradient: linear-gradient(135deg, #FFF6C8 0%, #E5C158 35%, #D4AF37 60%, #9A7422 100%);
+      --text-main: #F8FAFC;
+      --text-sub: #E2E8F0;
+      --text-muted: #94A3B8;
+      --border-gold: rgba(212, 175, 55, 0.35);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding-bottom: 90px;
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 60%, rgba(212, 175, 55, 0.06) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 14px 14px 20px 14px;
+    }
+
+    /* Top Brand Header */
+    .brand-header {
+      text-align: center;
+      padding: 16px 10px 14px 10px;
+      border-bottom: 1px solid var(--border-gold);
+      position: relative;
+      margin-bottom: 15px;
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      box-shadow: 0 0 12px var(--gold-glow);
+    }
+
+    .brand-badge svg {
+      width: 13px;
+      height: 13px;
+      fill: var(--gold-light);
+    }
+
+    .brand-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #FFF;
+      line-height: 1.4;
+      margin-bottom: 4px;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Navigation Mode Switcher */
+    .nav-tabs {
+      display: flex;
+      background: rgba(16, 29, 56, 0.8);
+      border: 1px solid var(--border-gold);
+      border-radius: 12px;
+      padding: 4px;
+      gap: 4px;
+      margin-bottom: 18px;
+    }
+
+    .nav-tab {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 8px;
+      border-radius: 8px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .nav-tab.active {
+      background: var(--gold-gradient);
+      color: #060B19;
+      box-shadow: 0 2px 10px rgba(212, 175, 55, 0.35);
+    }
+
+    .nav-tab svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* Slider / Flipbook */
+    .slider-view {
+      display: block;
+    }
+
+    .slider-container {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1.5px solid var(--border-gold);
+      background: #000;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      user-select: none;
+      touch-action: pan-y;
+    }
+
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      width: 100%;
+    }
+
+    .slide {
+      min-width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #02050D;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      max-height: 75vh;
+      cursor: zoom-in;
+    }
+
+    .slider-ctrl {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(4, 8, 19, 0.75);
+      border: 1.5px solid var(--gold-primary);
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+      transition: all 0.2s;
+    }
+
+    .slider-ctrl:hover {
+      background: var(--gold-primary);
+      color: #040813;
+    }
+
+    .slider-ctrl.prev { right: 10px; }
+    .slider-ctrl.next { left: 10px; }
+
+    .slider-ctrl svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+      margin-bottom: 8px;
+    }
+
+    .slider-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.25);
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .slider-dot.active {
+      background: var(--gold-primary);
+      width: 26px;
+      border-radius: 6px;
+      box-shadow: 0 0 10px var(--gold-primary);
+    }
+
+    .slide-page-badge {
+      text-align: center;
+      font-size: 12px;
+      color: var(--gold-light);
+      font-weight: 700;
+      margin-top: 4px;
+      margin-bottom: 12px;
+    }
+
+    .slide-hint {
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .slide-hint svg {
+      width: 14px;
+      height: 14px;
+      fill: var(--gold-primary);
+    }
+
+    /* Structured Reading View */
+    .reading-view {
+      display: none;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--gold-gradient);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .card-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-primary);
+      flex-shrink: 0;
+    }
+
+    .card-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    .card-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .card-text {
+      font-size: 12.5px;
+      color: var(--text-sub);
+      line-height: 1.7;
+      text-align: justify;
+      margin-bottom: 12px;
+    }
+
+    .pill-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      background: rgba(212, 175, 55, 0.2);
+      border: 1px solid var(--border-gold);
+      border-radius: 6px;
+      color: var(--gold-light);
+      font-size: 10.5px;
+      font-weight: 700;
+      margin-right: auto;
+    }
+
+    /* Illustrated Grid */
+    .ill-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 12px 0;
+    }
+
+    .ill-card {
+      background: rgba(8, 16, 34, 0.7);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 10px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .ill-thumb {
+      width: 100%;
+      height: 95px;
+      border-radius: 6px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .ill-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #FFF;
+      line-height: 1.3;
+    }
+
+    .ill-desc {
+      font-size: 10px;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .extra-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px dashed rgba(212, 175, 55, 0.3);
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 11.5px;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .extra-item strong {
+      color: var(--gold-light);
+    }
+
+    /* Management Profile Card */
+    .mgmt-card {
+      background: linear-gradient(135deg, rgba(16, 29, 56, 0.95) 0%, rgba(8, 15, 30, 0.98) 100%);
+      border: 1.5px solid var(--gold-primary);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
+    }
+
+    .mgmt-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .mgmt-name {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--gold-light);
+    }
+
+    .mgmt-pill {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      font-size: 11.5px;
+      color: #E2E8F0;
+      margin-bottom: 6px;
+      line-height: 1.45;
+    }
+
+    /* Institutional Badges */
+    .inst-box {
+      background: rgba(16, 29, 56, 0.8);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      margin-bottom: 16px;
+    }
+
+    .inst-box-header {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .inst-box-header svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--gold-primary);
+    }
+
+    .inst-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11.5px;
+      color: #F8FAFC;
+      margin-bottom: 6px;
+    }
+
+    .inst-row svg {
+      width: 13px;
+      height: 13px;
+      fill: var(--gold-light);
+      flex-shrink: 0;
+    }
+
+    /* Call to Action Banner */
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.25) 0%, rgba(13, 23, 44, 0.95) 100%);
+      border: 1.5px solid var(--gold-primary);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: center;
+      margin-bottom: 16px;
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+    }
+
+    .cta-banner h3 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+    }
+
+    .cta-banner p {
+      font-size: 12px;
+      color: #FFF;
+      margin-bottom: 12px;
+    }
+
+    .btn-booking {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--gold-gradient);
+      color: #060B19;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 10px 24px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+      transition: all 0.2s;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .btn-booking svg {
+      width: 16px;
+      height: 16px;
+      fill: #060B19;
+    }
+
+    .btn-booking:active {
+      transform: scale(0.97);
+    }
+
+    /* Messengers Grid */
+    .messengers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin: 14px 0;
+    }
+
+    .msg-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 12px;
+      background: rgba(16, 29, 56, 0.8);
+      border: 1px solid var(--border-gold);
+      border-radius: 8px;
+      color: #FFF;
+      text-decoration: none;
+      font-size: 11.5px;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+
+    .msg-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--gold-light);
+      flex-shrink: 0;
+    }
+
+    .msg-btn:hover {
+      background: rgba(212, 175, 55, 0.2);
+    }
+
+    /* Sticky Bottom Action Hub */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(4, 8, 19, 0.95);
+      backdrop-filter: blur(16px);
+      border-top: 1.5px solid var(--gold-primary);
+      padding: 8px 12px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 999;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    .bottom-bar-inner {
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .action-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      padding: 6px 4px;
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      background: rgba(16, 29, 56, 0.6);
+      color: var(--text-sub);
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+
+    .action-btn.call-primary {
+      background: var(--gold-gradient);
+      color: #060B19;
+      border: none;
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+      animation: pulse-gold 2s infinite;
+    }
+
+    @keyframes pulse-gold {
+      0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+    }
+
+    .action-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      cursor: zoom-out;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 95vh;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 1px solid var(--gold-primary);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(212, 175, 55, 0.3);
+      border: 1px solid var(--gold-primary);
+      color: #FFF;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Booking Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+    }
+
+    .modal-card {
+      background: #0A1224;
+      border: 1.5px solid var(--gold-primary);
+      border-radius: var(--radius-md);
+      width: 100%;
+      max-width: 440px;
+      padding: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.9);
+      position: relative;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-gold);
+    }
+
+    .modal-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--gold-light);
+    }
+
+    .modal-close {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 24px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .form-group { margin-bottom: 12px; }
+    .form-label {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #E2E8F0;
+      margin-bottom: 5px;
+    }
+
+    .form-input, .form-select {
+      width: 100%;
+      padding: 10px 12px;
+      background: rgba(4, 8, 19, 0.8);
+      border: 1px solid var(--border-gold);
+      border-radius: 8px;
+      color: #FFF;
+      font-family: inherit;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .form-input:focus, .form-select:focus {
+      border-color: var(--gold-light);
+      box-shadow: 0 0 8px var(--gold-glow);
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 12px;
+      background: var(--gold-gradient);
+      color: #060B19;
+      font-weight: 800;
+      font-size: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Top Branding Header -->
+    <header class="brand-header">
+      <div class="brand-badge">
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <span>نسخه تعاملی و هوشمند بروشور</span>
+      </div>
+      <h1 class="brand-title">آکادمی تخصصی استعداد، مهارت و کسب‌وکار</h1>
+      <p class="brand-subtitle">همکار آموزشی پژوهشگاه استاندارد ملی ایران و دانشگاه بین‌المللی امام خمینی</p>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+      <button class="nav-tab active" id="tab-slider" onclick="switchView('slider')">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg>
+        <span>📖 کاتالوگ تصویری (ورق‌زن)</span>
+      </button>
+      <button class="nav-tab" id="tab-reading" onclick="switchView('reading')">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+        <span>📜 خلاصه سرفصل‌ها (متن‌محور)</span>
+      </button>
+    </nav>
+
+    <!-- VIEW 1: INTERACTIVE IMAGE SLIDER / FLIPBOOK -->
+    <section class="slider-view" id="sliderView">
+      <div class="slider-container" id="sliderBox">
+        <div class="slider-wrapper" id="sliderWrapper">
+          <div class="slide">
+            <img src="web_page_1.jpg" alt="صفحه ۱ - روی جلد" onclick="openLightbox(this.src)">
+          </div>
+          <div class="slide">
+            <img src="web_page_2.jpg" alt="صفحه ۲ - فلسفه و مأموریت" onclick="openLightbox(this.src)">
+          </div>
+          <div class="slide">
+            <img src="web_page_3.jpg" alt="صفحه ۳ - دپارتمان‌ها و سرفصل‌ها" onclick="openLightbox(this.src)">
+          </div>
+          <div class="slide">
+            <img src="web_page_4.jpg" alt="صفحه ۴ - مزیت‌ها، مدیریت و تماس" onclick="openLightbox(this.src)">
+          </div>
+        </div>
+
+        <button class="slider-ctrl prev" onclick="prevSlide()" title="صفحه قبلی" aria-label="صفحه قبلی">
+          <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+        </button>
+        <button class="slider-ctrl next" onclick="nextSlide()" title="صفحه بعدی" aria-label="صفحه بعدی">
+          <svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+        </button>
+      </div>
+
+      <div class="slider-dots">
+        <div class="slider-dot active" onclick="goToSlide(0)"></div>
+        <div class="slider-dot" onclick="goToSlide(1)"></div>
+        <div class="slider-dot" onclick="goToSlide(2)"></div>
+        <div class="slider-dot" onclick="goToSlide(3)"></div>
+      </div>
+
+      <div class="slide-page-badge" id="slideBadge">صفحه ۱ از ۴ : روی جلد و هویت آکادمی</div>
+      <div class="slide-hint">
+        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <span>برای بزرگنمایی هر صفحه، روی تصویر آن ضربه بزنید (Touch to Zoom)</span>
+      </div>
+    </section>
+
+    <!-- VIEW 2: STRUCTURED CARD-BASED READING VIEW -->
+    <section class="reading-view" id="readingView">
+      
+      <!-- Philosophy Card -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+          </div>
+          <div>
+            <div class="card-title">فلسفه وجودی و مأموریت بنیادین آکادمی</div>
+            <div class="card-subtitle">چرا آموزش‌های سنتی دیگر پاسخگوی دنیای امروز نیستند؟</div>
+          </div>
+        </div>
+        <p class="card-text">
+          آکادمی با هدف پر کردن شکاف عمیق میان آموزش‌های تئوریک سنتی و نیازهای واقعی بازار کار و اقتصاد مدرن شکل گرفته است. مأموریت ما، نه انباشت محفوظات، بلکه کشف ژن‌های برتر مهارتی، هدایت عملی استعدادها و توانمندسازی افراد برای خلق ارزش اقتصادی پایدار است.
+        </p>
+      </div>
+
+      <!-- Department 1: Teens (15-18) -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+          </div>
+          <div>
+            <div class="card-title">دپارتمان نوجوانان: تربیت اقتصادی و درآمدزایی</div>
+            <div class="card-subtitle">ویژه رده سنی ۱۵ تا ۱۸ سال</div>
+          </div>
+          <span class="pill-badge">۱۵ تا ۱۸ سال</span>
+        </div>
+        <p class="card-text">
+          🎯 <strong>هدف بنیادین:</strong> شکل‌دهی ذهنیت ثروت‌آفرین، درک ارزش پول و تجربه اولین درآمدهای مستقل پیش از ورود به دانشگاه.
+        </p>
+
+        <!-- 4 Illustrated Cards for Teens -->
+        <div class="ill-grid">
+          <div class="ill-card">
+            <img src="thumb_teen_1_iq.jpg" class="ill-thumb" alt="هوش مالی">
+            <div class="ill-title">هوش مالی و مدیریت منابع</div>
+            <div class="ill-desc">بودجه‌بندی هوشمند، پس‌انداز و شناخت ارزش</div>
+          </div>
+          <div class="ill-card">
+            <img src="thumb_teen_2_ideas.jpg" class="ill-thumb" alt="ایده‌های پولساز">
+            <div class="ill-title">کشف ایده‌های پولساز فردی</div>
+            <div class="ill-desc">تبدیل علایق درونی به فرصت‌های واقعی بازار</div>
+          </div>
+          <div class="ill-card">
+            <img src="thumb_teen_3_branding.jpg" class="ill-thumb" alt="بازاریابی و برند">
+            <div class="ill-title">مبانی بازاریابی و برند فردی</div>
+            <div class="ill-desc">هویت‌سازی شخصی، فنون فروش و جذب مخاطب</div>
+          </div>
+          <div class="ill-card">
+            <img src="thumb_teen_4_skills.jpg" class="ill-thumb" alt="فن بیان و مذاکره">
+            <div class="ill-title">فن بیان، مذاکره و حل مسئله</div>
+            <div class="ill-desc">اعتمادبه‌نفس کلامی و تفکر استراتژیک چالش‌ها</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Department 2: Adults (18+) -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.96.76 1.58V19z"/></svg>
+          </div>
+          <div>
+            <div class="card-title">دپارتمان بزرگسالان: بهبود اقتصادی و راهبری کسب‌وکار</div>
+            <div class="card-subtitle">ویژه کارآفرینان، مدیران و علاقه‌مندان رشد اقتصادی</div>
+          </div>
+          <span class="pill-badge">بالای ۱۸ سال</span>
+        </div>
+        <p class="card-text">
+          🎯 <strong>هدف بنیادین:</strong> تحول در وضعیت مالی، سیستم‌سازی فرآیندها، مقیاس‌پذیری بیزینس و تسلط بر مدیریت سازمان.
+        </p>
+
+        <!-- 4 Illustrated Cards for Adults -->
+        <div class="ill-grid">
+          <div class="ill-card">
+            <img src="thumb_adult_1_bizmodel.jpg" class="ill-thumb" alt="بوم کسب‌وکار">
+            <div class="ill-title">طراحی بوم مدل درآمدی</div>
+            <div class="ill-desc">تدوین نقشه جامع ارزش تجاری و اعتبارسنجی سریع</div>
+          </div>
+          <div class="ill-card">
+            <img src="thumb_adult_2_leadership.jpg" class="ill-thumb" alt="رهبری سازمانی">
+            <div class="ill-title">اصول رهبری و هدایت تیم</div>
+            <div class="ill-desc">مدیریت تعارض، تفویض اختیار و رهبری الهام‌بخش</div>
+          </div>
+          <div class="ill-card">
+            <img src="thumb_adult_3_automation.jpg" class="ill-thumb" alt="اتوماسیون و هوش مصنوعی">
+            <div class="ill-title">سیستم‌سازی و هوش مصنوعی</div>
+            <div class="ill-desc">مهندسی فرآیندها، ابزارهای مدرن AI و تحلیل داده</div>
+          </div>
+          <div class="ill-card">
+            <img src="thumb_adult_4_wealth.jpg" class="ill-thumb" alt="مدیریت درآمد و ریسک">
+            <div class="ill-title">استراتژی‌های پیشرفته درآمد</div>
+            <div class="ill-desc">بهینه‌سازی جریان نقدینگی، سودآوری و مهار ریسک</div>
+          </div>
+        </div>
+
+        <!-- 2 Additional Rows -->
+        <div class="extra-item">
+          <span>⚖️</span>
+          <span><strong>تحلیل مالی و قراردادهای تجاری:</strong> تنظیم اصولی قراردادها، انطباق و سلامت حقوقی بیزینس</span>
+        </div>
+        <div class="extra-item">
+          <span>🚀</span>
+          <span><strong>جذب سرمایه و مقیاس‌پذیری:</strong> ورود مقتدرانه به بازار هدف و رشد پایدار و مستمر بیزینس</span>
+        </div>
+      </div>
+
+      <!-- Dedicated Management Box -->
+      <div class="mgmt-card">
+        <div class="mgmt-title-row">
+          <svg width="18" height="18" fill="var(--gold-primary)" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+          <div class="mgmt-name">مدیریت مجموعه: مهندس یوسف فتح‌الهی</div>
+        </div>
+        <div class="mgmt-pill">
+          <span>⚙️</span>
+          <span><strong>مهندسی صنایع و سیستم‌سازی فرآیندها:</strong> طراحی علمی مسیر یادگیری، تحلیل داده و مدیریت فرآیندهای کسب‌وکار</span>
+        </div>
+        <div class="mgmt-pill">
+          <span>🎯</span>
+          <span><strong>مشاور ارشد استعدادیابی و توانمندسازی:</strong> هدایت شایستگی‌های فردی، روانشناسی رشد و تفکر راهبردی خلق ثروت</span>
+        </div>
+        <div class="mgmt-pill">
+          <span>🚀</span>
+          <span><strong>راهبر رشد استارتاپ‌ها و شرکت‌های دانش‌بنیان:</strong> منتورینگ تجاری‌سازی، تدوین بوم مدل درآمدی و مقیاس‌پذیری بیزینس</span>
+        </div>
+      </div>
+
+      <!-- Institutional Accreditations -->
+      <div class="inst-box">
+        <div class="inst-box-header">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          <span>اعتبارنامه‌ها و جایگاه‌های همکار رسمی:</span>
+        </div>
+        <div class="inst-row">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <span>همکار آموزشی <strong>پژوهشگاه سازمان ملی استاندارد ایران</strong> (دفتر منطقه‌ای قزوین)</span>
+        </div>
+        <div class="inst-row">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <span>همکار <strong>دانشگاه بین‌المللی امام خمینی</strong> در حوزه راهبری و رشد شرکت‌های دانش‌بنیان</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Call to Action Banner -->
+    <div class="cta-banner">
+      <h3>شروع تحول شما از همین‌جا آغاز می‌شود</h3>
+      <p>جلسه نخست مشاوره، تعیین سطح، ارزیابی استعداد و تحول اقتصادی کاملاً <strong>رایگان</strong> است.</p>
+      <button class="btn-booking" onclick="openBookingModal()">
+        <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+        <span>رزرو آنلاین جلسه استعدادیابی رایگان</span>
+      </button>
+    </div>
+
+    <!-- Direct Messengers Grid -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
+        </div>
+        <div>
+          <div class="card-title">ارتباط مستقیم در پیام‌رسان‌ها</div>
+          <div class="card-subtitle">پاسخگویی سریع مشاوران آکادمی</div>
+        </div>
+      </div>
+      
+      <div class="messengers-grid">
+        <a href="https://eitaa.com" target="_blank" class="msg-btn">
+          <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+          <span>پیام‌رسان ایتا</span>
+        </a>
+        <a href="https://ble.ir" target="_blank" class="msg-btn">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.74.45 3.38 1.25 4.81L2 22l5.36-1.22C8.75 21.56 10.33 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          <span>پیام‌رسان بله</span>
+        </a>
+        <a href="https://t.me" target="_blank" class="msg-btn">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          <span>تلگرام (Telegram)</span>
+        </a>
+        <a href="https://wa.me/989193819746" target="_blank" class="msg-btn">
+          <svg viewBox="0 0 24 24"><path d="M16.75 13.96c.25.13.41.2.46.3.06.11.04.61-.21 1.18-.2.56-1.24 1.1-1.7 1.12-.46.02-.47.36-2.96-.73-2.49-1.09-3.99-3.75-4.11-3.92-.12-.17-.99-1.32-.99-2.51 0-1.2.63-1.79.85-2.04.23-.25.5-.31.66-.31.17 0 .33.01.48.01.15 0 .36-.06.56.42.21.5.7 1.7.76 1.83.06.12.1.27.02.43-.08.17-.12.27-.25.42-.12.15-.26.34-.37.45-.12.13-.25.27-.11.51.14.25.63 1.04 1.36 1.68.93.83 1.72 1.09 1.97 1.21.25.12.39.11.54-.06.14-.17.61-.71.77-.95.16-.25.32-.2.54-.12l.14.07zM12 2a10 10 0 00-8.6 15.1L2 22l5.04-1.33A9.98 9.98 0 0012 22a10 10 0 000-20z"/></svg>
+          <span>واتساپ (WhatsApp)</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Contact & Address Card -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
+        <div>
+          <div class="card-title">دفتر مرکزی و اطلاعات تماس</div>
+          <div class="card-subtitle">مدیر داخلی آموزشگاه: اسماعیل فتح‌الهی</div>
+        </div>
+      </div>
+      
+      <div style="font-size:12.5px; color:#E2E8F0; line-height:1.7; margin-bottom:12px;">
+        <p>👤 <strong>مدیر داخلی آموزشگاه:</strong> اسماعیل فتح‌الهی</p>
+        <p>📞 <strong>شماره هماهنگی و مشاوره:</strong> <a href="tel:09193819746" style="color:var(--gold-light); text-decoration:none; font-weight:700; direction:ltr; display:inline-block;">۰۹۱۹۳۸۱۹۷۴۶</a></p>
+        <p>📍 <strong>نشانی:</strong> قزوین، خیابان شهید بابایی (دانشگاه)، روبروی پارک الغدیر، جنب بانک ملت، پژوهشگاه استاندارد ملی ایران، طبقه سوم، واحد توسعه کسب‌وکار</p>
+      </div>
+
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <a href="https://nshn.ir" target="_blank" class="msg-btn" style="flex:1;">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span>مسیریابی نشان</span>
+        </a>
+        <a href="https://balad.ir" target="_blank" class="msg-btn" style="flex:1;">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span>مسیریابی بلد</span>
+        </a>
+        <button onclick="downloadVCard()" class="msg-btn" style="flex:1; cursor:pointer;">
+          <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+          <span>ذخیره در مخاطبین</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer Note -->
+    <div class="footer-note">
+      «از مهارت‌آموزی در نوجوانی، تا رهبری اقتصادی در بزرگسالی.»<br>
+      © تمامی حقوق برای آکادمی تخصصی استعداد، مهارت و کسب‌وکار محفوظ است.
+    </div>
+
+  </div>
+
+  <!-- FIXED FLOATING BOTTOM ACTION BAR -->
+  <div class="bottom-bar">
+    <div class="bottom-bar-inner">
+      <a href="tel:09193819746" class="action-btn call-primary" title="تماس فوری با مدیر داخلی">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        <span>تماس مستقیم</span>
+      </a>
+
+      <button class="action-btn" onclick="openBookingModal()" title="رزرو رایگان جلسه مشاوره">
+        <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+        <span>رزرو مشاوره</span>
+      </button>
+
+      <a href="brochure_academy_a5.pdf" download="brochure_academy_a5.pdf" class="action-btn" title="دانلود نسخه چاپی PDF">
+        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        <span>دانلود PDF</span>
+      </a>
+
+      <button class="action-btn" onclick="shareBrochure()" title="اشتراک‌گذاری">
+        <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+        <span>اشتراک</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX IMAGE ZOOM MODAL -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightboxImg" src="" alt="بزرگنمایی صفحه بروشور">
+  </div>
+
+  <!-- BOOKING CONSULTATION MODAL -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title">رزرو رایگان جلسه استعدادیابی و مشاوره</div>
+        <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+      </div>
+
+      <form id="bookingForm" onsubmit="submitBooking(event)">
+        <div class="form-group">
+          <label class="form-label">نام و نام خانوادگی:</label>
+          <input type="text" class="form-input" id="leadName" required placeholder="مثال: علی محمدی">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">شماره همراه جهت هماهنگی:</label>
+          <input type="tel" class="form-input" id="leadPhone" required placeholder="۰۹۱۲۳۴۵۶۷۸۹" style="direction:ltr; text-align:right;">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">رده سنی متقاضی:</label>
+          <select class="form-select" id="leadAge">
+            <option value="نوجوان (۱۵ تا ۱۸ سال)">دپارتمان نوجوانان (۱۵ تا ۱۸ سال)</option>
+            <option value="بزرگسال (بالای ۱۸ سال)">دپارتمان بزرگسالان (بالای ۱۸ سال)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">موضوع یا هدف اصلی مورد نظر:</label>
+          <input type="text" class="form-input" id="leadGoal" placeholder="مثال: هوش مالی، راه‌اندازی کسب‌وکار، مهندسی فرآیند...">
+        </div>
+
+        <button type="submit" class="form-submit">
+          <span>ارسال درخواست و رزرو سریع (رایگان)</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const totalSlides = 4;
+    const sliderWrapper = document.getElementById('sliderWrapper');
+    const dots = document.querySelectorAll('.slider-dot');
+    const slideBadge = document.getElementById('slideBadge');
+
+    const pageDescriptions = [
+      'صفحه ۱ از ۴ : روی جلد و هویت آکادمی',
+      'صفحه ۲ از ۴ : فلسفه وجودی، مأموریت و چرایی تأسیس',
+      'صفحه ۳ از ۴ : دپارتمان‌های نوجوانان و بزرگسالان همراه با تصاویر مفهومی',
+      'صفحه ۴ از ۴ : مزیت‌ها، مدیریت مهندس یوسف فتح‌الهی و اطلاعات تماس'
+    ];
+
+    function updateSlider() {
+      sliderWrapper.style.transform = `translateX(${currentSlide * 100}%)`;
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentSlide);
+      });
+      slideBadge.innerText = pageDescriptions[currentSlide];
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide < totalSlides - 1) ? currentSlide + 1 : 0;
+      updateSlider();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide > 0) ? currentSlide - 1 : totalSlides - 1;
+      updateSlider();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateSlider();
+    }
+
+    // Touch Gestures
+    let startX = 0, endX = 0;
+    const sliderBox = document.getElementById('sliderBox');
+    sliderBox.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+    sliderBox.addEventListener('touchend', e => { endX = e.changedTouches[0].clientX; handleSwipe(); }, { passive: true });
+
+    function handleSwipe() {
+      const diff = endX - startX;
+      if (diff > 40) nextSlide();
+      else if (diff < -40) prevSlide();
+    }
+
+    function switchView(mode) {
+      const tabSlider = document.getElementById('tab-slider');
+      const tabReading = document.getElementById('tab-reading');
+      const sliderView = document.getElementById('sliderView');
+      const readingView = document.getElementById('readingView');
+
+      if (mode === 'slider') {
+        tabSlider.classList.add('active');
+        tabReading.classList.remove('active');
+        sliderView.style.display = 'block';
+        readingView.style.display = 'none';
+      } else {
+        tabReading.classList.add('active');
+        tabSlider.classList.remove('active');
+        sliderView.style.display = 'none';
+        readingView.style.display = 'block';
+      }
+    }
+
+    function openLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+
+    function openBookingModal() {
+      document.getElementById('bookingModal').style.display = 'flex';
+    }
+
+    function closeBookingModal() {
+      document.getElementById('bookingModal').style.display = 'none';
+    }
+
+    function submitBooking(e) {
+      e.preventDefault();
+      const name = document.getElementById('leadName').value;
+      const phone = document.getElementById('leadPhone').value;
+      const age = document.getElementById('leadAge').value;
+      const goal = document.getElementById('leadGoal').value || 'ارزیابی استعداد و مشاوره تحول اقتصادی';
+      const msg = `سلام و احترام%0Aدرخواست رزرو مشاوره رایگان از بروشور دیجیتال آکادمی:%0A👤 نام: ${name}%0A📞 تلفن: ${phone}%0A🎯 رده: ${age}%0A💡 هدف: ${goal}`;
+      
+      localStorage.setItem('last_booking', JSON.stringify({ name, phone, age, goal, date: new Date().toISOString() }));
+      alert('درخواست شما با موفقیت ثبت شد. جهت هماهنگی نهایی، به بخش ارسال پیام هدایت می‌شوید.');
+      closeBookingModal();
+      window.location.href = `sms:09193819746?body=${msg}`;
+    }
+
+    function downloadVCard() {
+      const vcard = `BEGIN:VCARD
+VERSION:3.0
+N:فتح‌الهی;اسماعیل;;;
+FN:اسماعیل فتح‌الهی (مدیر داخلی آکادمی)
+ORG:آکادمی تخصصی استعداد، مهارت و کسب‌وکار
+TITLE:مدیر داخلی آموزشگاه
+TEL;TYPE=CELL,VOICE:09193819746
+ADR;TYPE=WORK:;;قزوین، خیابان بابایی، جنب بانک ملت، پژوهشگاه استاندارد ملی ایران، طبقه سوم;;;
+NOTE:همکار پژوهشگاه سازمان ملی استاندارد و دانشگاه بین‌المللی امام خمینی - رزرو مشاوره رایگان
+END:VCARD`;
+
+      const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'Esmaeil_Fathollahi_Academy.vcf');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    function shareBrochure() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'آکادمی تخصصی استعداد، مهارت و کسب‌وکار',
+          text: 'نسخه دیجیتال بروشور آکادمی تخصصی استعداد، مهارت و کسب‌وکار',
+          url: window.location.href
+        }).catch(err => console.log('Share canceled'));
+      } else {
+        navigator.clipboard.writeText(window.location.href);
+        alert('لینک بروشور دیجیتال در حافظه کپی شد!');
+      }
+    }
+  </script>
+</body>
+</html>
